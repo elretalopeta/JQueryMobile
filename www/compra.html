@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <!--
+      * Please see the included README.md file for license terms and conditions.
+    -->
+    <head>
+        <title>Compra</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <style>
+            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        </style>
+
+        <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+        <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+        <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+        <script src="js/app.js" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <!-- 
+    
+    ui-grid-(a,b,c,d) -> columnas
+    ui-block-(a,b,c,d) -> block
+    
+    -->
+
+
+    <body>
+
+ <header data-role="header">
+            <a href="#" data-rel="back" class="ui-btn-left">Back</a>
+            <a href="#dmenu" class="ui-btn-right">Filtros</a>
+            <h1>Home Comprar</h1>
+
+
+        </header>
+        <div id="dmenu" data-role="panel" data-display="overlay" data-position="right">
+              
+            <button id="load2">Imagen</button>
+            
+            <form id="menuform" data-role="listview" data-inset="true">
+                   <select name="select-native-1" id="select-native-1">
+                            <option value="1">Comedor</option>
+                            <option value="2">Dormitorio</option>
+                            <option value="3">Cocina</option>
+                      </select>
+                
+                <button class="ui-btn ui-corner-all">Añadir Imagen</button>
+                
+                
+                
+                <textarea cols="40" rows="8" name="textarea-6" id="textarea-6" placeholder="Placeholder"></textarea>        
+                 <label>Anchura:</label>      
+                <input type="range" name="range-1a" id="anchura" min="0" max="100" value="0">
+                     <label >Altura:</label>      
+                <input type="range" name="range-1a" id="altura" min="0" max="100" value="0">  
+                <label>Profundidad:</label>      
+                <input type="range" name="range-1a" id="profundidad" min="0" max="100" value="0">
+
+                <button class="ui-btn ui-corner-all">Cancelar</button>
+
+
+
+            </form>  
+        </div>
+
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="compra.html" data-ajax="false">Carrito</a></li>
+                    <li><a href="/vistas/compra.html" data-ajax="false">Wishlist</a></li>
+                </ul>
+            </div>
+            <div class="ui-corner-all custom-corners">
+                  <div class="ui-bar ui-bar-a">
+                        <h3>Comedor</h3>
+                      </div>
+                  <div class="ui-body ui-body-a" style="margin-top:-21px;">
+                       <ul data-role="listview" data-split-icon="carat-r" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                        <!-- 
+                         <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                             <a>
+                                 <img src="../img/sofa.jpg">
+                                 <h2>Chaise longues</h2>
+                                 <p>Estira las piernas y relájate</p>
+                             </a>
+                             <a href="producto.html"></a>
+                         </li>
+                         
+                         <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                             <a>
+                                 <img src="../img/besta.jpg" alt=""/>
+                                 <h2>BESTÅ</h2>
+                                 <p>Alm TV, Hanviken, Sindvik vidrio transparente negro-marrón</p>
+                             </a>
+                              <a href="producto.html"></a> </li>
+                        -->
+                    </ul>
+                      </div>
+            </div>
+            <div class="ui-corner-all custom-corners">
+                  <div class="ui-bar ui-bar-a">
+                        <h3>Dormitorio</h3>
+                      </div>
+                  <div class="ui-body ui-body-a" style="margin-top:-21px;">
+                       <ul data-role="listview" data-split-icon="carat-r" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                        <!--
+                        <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                            <a>
+                                <img src="../img/cama.jpg" alt=""/>
+                                <h2>BRIMNES</h2>
+                                <p>Estructura diván&2cajones, blanco</p></a>
+                             <a href="producto.html"></a>  </li>
+                        <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                            <a>
+                                <img src="../img/cama2.jpg" alt=""/>
+                                <h2>SVÄRTA</h2>
+                                <p>Cama inferior, gris plata</p></a>
+                             <a href="producto.html"></a> </li>
+                        -->
+                    </ul>
+                      </div>
+            </div>
+            <div class="ui-corner-all custom-corners">
+                  <div class="ui-bar ui-bar-a">
+                        <h3>Cocina</h3>
+                      </div>
+                  <div class="ui-body ui-body-a" style="margin-top:-21px;">
+                      <ul data-role="listview" data-split-icon="carat-r" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                        <!--
+                        <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                            <a>
+                                <img src="../img/cocina.jpg" alt=""/>
+                                <h2>VARIERA</h2>
+                                <p>Cajón con asa, bambú</p></a>
+                             <a href="producto.html"></a>  </li>
+                        <li class="ui-li-has-alt ui-li-has-thumb ui-first-child">
+                            <a>
+                                <img src="../img/cama2.jpg" alt=""/>
+                                <h2>VARIERA</h2>
+                                <p>Caja, alto brillo blanco</p></a>
+                             <a href="producto.html"></a></li>
+                        -->
+                    </ul>
+                      </div>
+            </div>
+        </div>    
+    </body>
+</html>

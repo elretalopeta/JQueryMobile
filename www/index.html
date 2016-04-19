@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JQUERY DEMO</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <style>
+            /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+            @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+            @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        </style>
+
+        <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+        <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+        <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+
+        <section id="login" data-role="page"  >           
+            <div data-role="header">
+                <h1>Autenticacion de Usuario</h1>
+            </div>
+                <div data-role="content">   
+                    <form id="formulario" >
+                        <label> Usuario </label>
+                            <input type="text" id="nombredeusuario" name="nombredeusuario">
+                        <label> Password </label>
+                            <input type="password" id="clave" name="clave" >
+                            <input type="submit" value="Login" id="botonLogin">
+                    </form>
+                    <a href="#menu" data-transition="fade">Ir Pagina Menu</a>                     
+                </div>
+        </section>
+
+        <section id="menu" data-role="page"  >
+                <div data-role="main" class="ui-content">
+                    <div data-role="controlgroup" data-type="vertical">
+                        <a href="#home" class="ui-btn">Necesito</a>
+                        <a href="#home" class="ui-btn">Whishlist</a>
+                        <a class="ui-btn">Nivel</a>
+                        <a class="ui-btn">Cuenta</a> 
+                        <a class="ui-btn">Logout</a> 
+                    </div>
+                </div>
+            <footer data-role="footer" >Peu de pàgina</footer>
+        </section> 
+
+        <section id="home" data-role="page">
+
+            <header data-role="header">
+                <a href="#" data-rel="back" class="ui-btn-left">Back</a>
+                <a href="#add" class="ui-btn-right">Add</a>
+                <h1>Home</h1>
+            </header>
+
+                <div id="add" data-role="panel" data-display="overlay" data-position="right">
+                <button id="load">Añadir Imagen</button>
+
+                    <div > <img  id="img"src="img/besta.jpg" style="width:100%;"></div>
+
+                        <form id="menuform" data-role="listview" data-inset="true">
+                           <select name="select-native-1" id="ubicacion">
+                                <option value="1">Comedor</option>
+                                <option value="2">Cocina</option>
+                                <option value="3">Dormitorio</option>
+                            </select>               
+                            <textarea cols="40" rows="8" name="textarea-6" id="textarea-6" placeholder="Placeholder"></textarea>        
+                             <label>Anchura:</label>      
+                            <input type="range" name="range-1a" id="anchura" min="0" max="100" value="0">
+                                 <label >Altura:</label>      
+                            <input type="range" name="range-1a" id="altura" min="0" max="100" value="0">  
+                                <label>Profundidad:</label>      
+                            <input type="range" name="range-1a" id="profundidad" min="0" max="100" value="0">
+                            
+                        </form>  
+                        <button class="ui-btn ui-corner-all" id="guardar">Guardar</button>
+                         <a data-rel="close" class="ui-btn ui-corner-all">Cancelar</a>
+                </div>
+
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#contentNecesito">Necesito</a></li>
+                        <li><a href="#contentWhishlist">Wishlist</a></li>
+                    </ul>
+                </div>
+
+                <div data-role="main" class="ui-content">
+
+
+
+                    <div id="ver"></div>    
+                    <input type="range" name="range-1a" id="prueba" min="0" max="100" value="0"/>
+                    <button id="añadir">Añadir Imagen</button>
+
+
+
+
+                    <div id="contentNecesito">
+                        <ul data-role="listview" data-inset="true" >
+                            <li data-role="list-divider" id="1">Comedor</li>
+                            <li><a href="#detalle">
+                                <img src="img/besta.jpg">
+                            <h2>Detalle</h2>
+                            <p>Broken Bells</p></a>
+                            </li>
+                             
+                            <li data-role="list-divider"  id="2">Cocina</li>
+                            <li><a href="#">
+                                 <img src="img/cocina.jpg">
+                            <h2>Broken Bells</h2>
+                            <p>Broken Bells</p></a>
+                            </li>
+                            <li data-role="list-divider" id="3">Dormitorio</li>
+                            <li><a href="#">
+                               <img src="img/cama.jpg">
+                            <h2>Broken Bells</h2>
+                            <p>Broken Bells</p></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="contentWhishlist">
+                        <!-- Como seria -->
+                    </div>
+
+                </div>                
+            <footer data-role="footer">Peu de pàgina</footer>
+        </section> 
+
+        <section id="detalle" data-role="page"  >
+                        <header data-role="header">
+                <a href="#" data-rel="back" class="ui-btn-left">Back</a>
+                <a href="#dmenu" class="ui-btn-right">Add</a>
+                <h1>Home</h1>
+            </header>
+
+            <div data-role="main" class="ui-content">
+                <div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a"><img src="img/cama.jpg" style="width:100%"></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" > <img src="img/cama.jpg" style="width:100%"></div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a"> <img src="img/cama.jpg" style="width:100%"></div></div>
+                </div>
+                 <button id="load">Añadir Imagen</button>
+               <ul data-role="listview" data-inset="true"><li class="ui-btn">Nombre</li><li class="ui-btn">Anchura</li><li class="ui-btn">Altura</li><li class="ui-btn">Profundidad</li></ul>
+            </div>
+              
+            <footer data-role="footer" > <div data-role="navbar">
+                    <ul>
+                        <li><a href="#nivel">Nivel</a></li>
+                        <li><a href="#cuentaatras">Cuenta Atras</a></li>
+                    </ul>
+                </div></footer>
+        </section> 
+
+    </body>
+</html>
