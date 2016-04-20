@@ -27,6 +27,7 @@ and open the template in the editor.
     </head>
     <body>
 
+        <!-- LOGIN -->
         <section id="login" data-role="page"  >           
             <div data-role="header">
                 <h1>Autenticacion de Usuario</h1>
@@ -43,7 +44,8 @@ and open the template in the editor.
                 </div>
         </section>
 
-        <section id="menu" data-role="page"  >
+        <!-- MENU -->
+        <section id="menu" data-role="page">
                 <div data-role="main" class="ui-content">
                     <div data-role="controlgroup" data-type="vertical">
                         <a href="#home" class="ui-btn">Necesito</a>
@@ -56,6 +58,7 @@ and open the template in the editor.
             <footer data-role="footer" >Peu de pàgina</footer>
         </section> 
 
+        <!-- HOME -->
         <section id="home" data-role="page">
 
             <header data-role="header">
@@ -65,9 +68,9 @@ and open the template in the editor.
             </header>
 
                 <div id="add" data-role="panel" data-display="overlay" data-position="right">
-                <button id="load">Añadir Imagen</button>
+                <button id="home-load">Añadir Imagen Panel</button>
 
-                    <div > <img  id="img"src="img/besta.jpg" style="width:100%;"></div>
+                    <div> <img  id="img" src="img/default.png" style="width:100%;"></div>
 
                         <form id="menuform" data-role="listview" data-inset="true">
                            <select name="select-native-1" id="ubicacion">
@@ -101,7 +104,7 @@ and open the template in the editor.
 
                     <div id="ver"></div>    
                     <input type="range" name="range-1a" id="prueba" min="0" max="100" value="0"/>
-                    <button id="añadir">Añadir Imagen</button>
+                   
 
 
 
@@ -138,17 +141,36 @@ and open the template in the editor.
             <footer data-role="footer">Peu de pàgina</footer>
         </section> 
 
+
+        <!-- DETALLE -->
         <section id="detalle" data-role="page"  >
                         <header data-role="header">
                 <a href="#" data-rel="back" class="ui-btn-left">Back</a>
-                <a href="#dmenu" class="ui-btn-right">Add</a>
                 <h1>Home</h1>
             </header>
 
             <div data-role="main" class="ui-content">
-                <div class="ui-grid-b"><div class="ui-block-a"><div class="ui-bar ui-bar-a"><img src="img/cama.jpg" style="width:100%"></div></div><div class="ui-block-b"><div class="ui-bar ui-bar-a" > <img src="img/cama.jpg" style="width:100%"></div></div><div class="ui-block-c"><div class="ui-bar ui-bar-a"> <img src="img/cama.jpg" style="width:100%"></div></div>
+
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        
+                            <img src="img/default.png" style="width:100%" id="detalle-img-1">
+                      
+                    </div>
+                    <div class="ui-block-b">
+                       
+                            <img src="img/default.png" style="width:100%" id="detalle-img-2">
+                        
+                    </div>
+                    <div class="ui-block-c">
+                      
+                            <img src="img/default.png" style="width:100%" id="detalle-img-3">
+                       
+                    </div>
                 </div>
-                 <button id="load">Añadir Imagen</button>
+
+                 <button id="detalle-load">Añadir Imagen</button>
+
                <ul data-role="listview" data-inset="true"><li class="ui-btn">Nombre</li><li class="ui-btn">Anchura</li><li class="ui-btn">Altura</li><li class="ui-btn">Profundidad</li></ul>
             </div>
               

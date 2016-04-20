@@ -3,32 +3,67 @@ function onAppReady() {
         navigator.splashscreen.hide() ;
     }
     $('#login').click(home);
-    $('#load').click(load);
-    $('#load2').click(load);
-    $('#add').click(contenido);
+    
+    //$('#demo').click(demo);
 
+    $('#home-load').click(function(){
+        load(1);
+    });
+    $('#detalle-load').click(function(){
+        load(2);
+    });
+
+    $('#add').click(contenido);
     $('#añadir').click(contenido);
     $('#guardar').click(guardar);
     
 }
 
-var imagen
+function demo(){
+    alert('a');
+};
+
+var imagen;
 function changePage(){};
 function onFail(){}
-function load(){
-         navigator.camera.getPicture(takePictureSuccess, onFail, {
+function load(type){
+switch(type){
+    case 1:
+    navigator.camera.getPicture(homePictureSuccess, onFail, {
          quality: 100
-	, saveToPhotoAlbum: true
+    , saveToPhotoAlbum: true
         ,destinationType: navigator.camera.DestinationType.DATA_URL
         , sourceType: navigator.camera.PictureSourceType.CAMERA
     });
-  
+
+    break;
+    case 2:
+    //alert('Tipo 2');
+    navigator.camera.getPicture(detallePictureSuccess, onFail, {
+         quality: 100
+    , saveToPhotoAlbum: true
+        ,destinationType: navigator.camera.DestinationType.DATA_URL
+        , sourceType: navigator.camera.PictureSourceType.CAMERA
+    });
+
+    break;
+
+   }
 };
 
-function takePictureSuccess(imageData) {   
-  imagen = $('#img');
-  imagen.attr('src', "data:image/jpeg;base64," + imageData);
+var id = 1;
+function detallePictureSuccess(imageData) { 
+    if(id>3)id=1;
+    var imagen = $('#detalle-img-'+id);
+    imagen.attr('src', "data:image/jpeg;base64," + imageData);
+    id++;
 }
+
+function homePictureSuccess(imageData) {   
+    var imagen = $('#img');
+    imagen.attr('src', "data:image/jpeg;base64," + imageData);
+}
+
 function guardar(){
     var elemento = $('<li class="ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">'+imagen+'<h2>Broken Bells</h2><p>Broken Bells</p></a></a></li>');
     var anchura = $('#anchura').html();
