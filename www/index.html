@@ -70,26 +70,27 @@ and open the template in the editor.
                 <div id="add" data-role="panel" data-display="overlay" data-position="right">
                 <button id="home-load">Añadir Imagen Panel</button>
 
-                    <div> <img  id="img" src="img/default.png" style="width:100%;"></div>
+                    <div> 
+                        <img  id="img" src="img/default.png" style="width:100%;">
+                    </div>
 
-                        <form id="menuform" data-role="listview" data-inset="true">
+                    <form id="menuform" data-role="listview" data-inset="true">
                            <select name="select-native-1" id="ubicacion">
                                 <option value="1">Comedor</option>
                                 <option value="2">Cocina</option>
                                 <option value="3">Dormitorio</option>
                             </select>               
-                            <textarea cols="40" rows="8" name="textarea-6" id="textarea-6" placeholder="Placeholder"></textarea>        
+                            <input type="text" name="textarea-6" placeholder="Nombre" id="nombre"></textarea>       
                              <label>Anchura:</label>      
                             <input type="range" name="range-1a" id="anchura" min="0" max="100" value="0">
                                  <label >Altura:</label>      
                             <input type="range" name="range-1a" id="altura" min="0" max="100" value="0">  
                                 <label>Profundidad:</label>      
                             <input type="range" name="range-1a" id="profundidad" min="0" max="100" value="0">
-                            
                         </form>  
                         <button class="ui-btn ui-corner-all" id="guardar">Guardar</button>
                          <a data-rel="close" class="ui-btn ui-corner-all">Cancelar</a>
-                </div>
+                     </div>
 
                 <div data-role="navbar">
                     <ul>
@@ -100,19 +101,14 @@ and open the template in the editor.
 
                 <div data-role="main" class="ui-content">
 
-
-
                     <div id="ver"></div>    
                     <input type="range" name="range-1a" id="prueba" min="0" max="100" value="0"/>
-                   
-
-
-
+    
 
                     <div id="contentNecesito">
                         <ul data-role="listview" data-inset="true" >
                             <li data-role="list-divider" id="1">Comedor</li>
-                            <li><a href="#detalle">
+                            <li><a href="#detalle" class="ir">
                                 <img src="img/besta.jpg">
                             <h2>Detalle</h2>
                             <p>Broken Bells</p></a>
@@ -153,25 +149,24 @@ and open the template in the editor.
 
                 <div class="ui-grid-b">
                     <div class="ui-block-a">
-                        
                             <img src="img/default.png" style="width:100%" id="detalle-img-1">
-                      
                     </div>
                     <div class="ui-block-b">
-                       
                             <img src="img/default.png" style="width:100%" id="detalle-img-2">
-                        
                     </div>
                     <div class="ui-block-c">
-                      
                             <img src="img/default.png" style="width:100%" id="detalle-img-3">
-                       
                     </div>
-                </div>
+                </div> 
+                
+                <button id="detalle-load">Añadir Imagen</button>
+               <ul data-role="listview" data-inset="true">
+                <li class="ui-btn" id="nombre-detalle">Nombre: </li>
+                <li class="ui-btn" id="anchura-detalle">Anchura: </li>
+                <li class="ui-btn" id="altura-detalle">Altura: </li>
+                <li class="ui-btn" id="profundidad-detalle">Profundidad: </li>
+            </ul>
 
-                 <button id="detalle-load">Añadir Imagen</button>
-
-               <ul data-role="listview" data-inset="true"><li class="ui-btn">Nombre</li><li class="ui-btn">Anchura</li><li class="ui-btn">Altura</li><li class="ui-btn">Profundidad</li></ul>
             </div>
               
             <footer data-role="footer" > <div data-role="navbar">
@@ -181,6 +176,12 @@ and open the template in the editor.
                     </ul>
                 </div></footer>
         </section> 
+
+
+        <!-- WISHLIST -->
+        <section id="wishlist" data-role="page">
+
+        </section>
 
     </body>
 </html>

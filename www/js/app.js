@@ -15,7 +15,9 @@ function onAppReady() {
 
     $('#add').click(contenido);
     $('#añadir').click(contenido);
+
     $('#guardar').click(guardar);
+    $('.ir').click(detalle);
     
 }
 
@@ -59,27 +61,49 @@ function detallePictureSuccess(imageData) {
     id++;
 }
 
+var imagen;
 function homePictureSuccess(imageData) {   
-    var imagen = $('#img');
+    imagen = $('#img');
     imagen.attr('src', "data:image/jpeg;base64," + imageData);
 }
 
 function guardar(){
-    var elemento = $('<li class="ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">'+imagen+'<h2>Broken Bells</h2><p>Broken Bells</p></a></a></li>');
-    var anchura = $('#anchura').html();
+    //var elemento = $('<li class="ui-li-has-thumb ui-last-child"><a href="#detalle" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="'+ imagen.attr('src')+'" /><h2>Broken Bells</h2><p>Broken Bells</p></a></a></li>');
+    //var objeto = imagen;
+    //var elemento = $('<li class="ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r"> <h2>Broken Bells</h2><p>Broken Bells</p></a></li>');
+    //elemento.$("a").after(imagen);
 
-    $("#ver").html(anchura);
+    var nombre = $('#nombre').val();
+    var anchura = $('#anchura').val();
+    var altura = $('#altura').val();
+    var profundida = $('#profundidad').val();
+    var objeto = [nombre, anchura, altura, profundida];
+
+    //JSON.stringify
+
+    localStorage.setItem("objeto", JSON.stringify(objeto));
 
     var id = $('#ubicacion').val();
-    $("#"+id).after(elemento);
+    //$("#"+id).after(elemento);
 };
 
 function contenido(){
     //var imagen = $('<li class="ui-li-has-thumb ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="img/cocina.jpg"><h2>Broken Bells</h2> <p>Broken Bells</p></a></a></li>');
     //$('#comedor').after(imagen);
 
-    var anchura = $('#prueba').val();
+    var anchura = $('#anchura').val();
     $('#ver').html(anchura);
+}
+
+function detalle(){
+    var objeto = JSON.parse(localStorage.getItem("objeto"));
+    //var objeto = localStorage.getItem("objeto");
+    //document.getElementById("ver2").innerHTML = objeto[0];
+    //document.getElementById("ver2").append = objeto[0];
+    $("#nombre-detalle").append(objeto[0]);
+    $("#anchura-detalle").append(objeto[1]);
+    $("#altura-detalle").append(objeto[2]);
+    $("#profundidad-detalle").append(objeto[3]);
 }
 
 function home(){
