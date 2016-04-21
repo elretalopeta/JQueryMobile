@@ -101,17 +101,15 @@ and open the template in the editor.
 
                 <div data-role="main" class="ui-content">
 
-                    <div id="ver"></div>    
-                    <input type="range" name="range-1a" id="prueba" min="0" max="100" value="0"/>
-    
-
                     <div id="contentNecesito">
                         <ul data-role="listview" data-inset="true" >
-                            <li data-role="list-divider" id="1">Comedor</li>
-                            <li><a href="#detalle" class="ir">
-                                <img src="img/besta.jpg">
+                            <li data-role="list-divider" id="1" class="item">Comedor</li>
+                            
+                            <li class="ir" id="item1">
+                                <a href="#detalle"  >
+                                <img src="img/besta.jpg" >
                             <h2>Detalle</h2>
-                            <p>Broken Bells</p></a>
+                            <p>Pruebas</p></a>
                             </li>
                              
                             <li data-role="list-divider"  id="2">Cocina</li>
@@ -141,7 +139,7 @@ and open the template in the editor.
         <!-- DETALLE -->
         <section id="detalle" data-role="page"  >
                         <header data-role="header">
-                <a href="#" data-rel="back" class="ui-btn-left">Back</a>
+                <a href="#" data-rel="back" class="ui-btn-left" id="return">Back</a>
                 <h1>Home</h1>
             </header>
 
@@ -149,16 +147,16 @@ and open the template in the editor.
 
                 <div class="ui-grid-b">
                     <div class="ui-block-a">
-                            <img src="img/default.png" style="width:100%" id="detalle-img-1">
+                            <img src="img/default.png" style="width:100%" id="img-detalle-0">
                     </div>
                     <div class="ui-block-b">
-                            <img src="img/default.png" style="width:100%" id="detalle-img-2">
+                            <img src="img/default.png" style="width:100%" id="img-detalle-1">
                     </div>
                     <div class="ui-block-c">
-                            <img src="img/default.png" style="width:100%" id="detalle-img-3">
+                            <img src="img/default.png" style="width:100%" id="img-detalle-2">
                     </div>
                 </div> 
-                
+
                 <button id="detalle-load">Añadir Imagen</button>
                <ul data-role="listview" data-inset="true">
                 <li class="ui-btn" id="nombre-detalle">Nombre: </li>
